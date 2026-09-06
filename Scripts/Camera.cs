@@ -27,7 +27,7 @@ public partial class Camera : Camera3D
             if (Input.MouseMode == Input.MouseModeEnum.Captured)
             {
                 Input.MouseMode = Input.MouseModeEnum.Visible;
-            }
+            } 
         }
         if (Input.IsActionJustPressed("ui_accept"))
         {

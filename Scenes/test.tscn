@@ -1,21 +1,10 @@
 [gd_scene format=3 uid="uid://ni74ognet2ln"]
 
-[ext_resource type="Texture2D" uid="uid://d2rtf8yvtc57a" path="res://Sprites/Skies.png" id="1_8od7v"]
 [ext_resource type="PackedScene" uid="uid://bebf3vodmnhqv" path="res://Scenes/player.tscn" id="1_lc1oi"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8od7v"]
-atlas = ExtResource("1_8od7v")
-region = Rect2(261, 3, 253, 126)
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4dowq"]
-panorama = SubResource("AtlasTexture_8od7v")
-
-[sub_resource type="Sky" id="Sky_lc1oi"]
-sky_material = SubResource("PanoramaSkyMaterial_4dowq")
-
 [sub_resource type="Environment" id="Environment_lc1oi"]
-background_mode = 2
-sky = SubResource("Sky_lc1oi")
+background_mode = 1
+background_color = Color(0.40335768, 0.14737287, 0.17832667, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fv1yn"]
 size = Vector2(20, 20)

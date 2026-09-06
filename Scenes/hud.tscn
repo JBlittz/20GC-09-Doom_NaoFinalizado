@@ -174,6 +174,33 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bf2m"]
+atlas = ExtResource("1_e0onf")
+region = Rect2(78, 371, 23, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba8gd"]
+atlas = ExtResource("1_e0onf")
+region = Rect2(107, 369, 44, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e0onf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bf2m")
+}],
+"loop": 1,
+"name": &"Pistol",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ba8gd")
+}],
+"loop": 1,
+"name": &"Shotgun",
+"speed": 1.0
+}]
+
 [node name="HUD" type="Control" unique_id=234036635]
 layout_mode = 3
 anchors_preset = 15
@@ -182,19 +209,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1171454808]
+[node name="HudBackground" type="TextureRect" parent="." unique_id=878448998]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-alignment = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=878448998]
-layout_mode = 2
+offset_top = 567.0
+offset_right = 1142.1167
+offset_bottom = 669.11633
+scale = Vector2(0.8, 0.8)
 texture = SubResource("AtlasTexture_k7uyn")
 expand_mode = 5
 
-[node name="FaceHUD" type="AnimatedSprite2D" parent="." unique_id=1136935913]
-position = Vector2(511, 597)
+[node name="Face" type="AnimatedSprite2D" parent="." unique_id=1136935913]
+position = Vector2(406.00003, 615)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_fv1yn")
 animation = &"FullIdle"
@@ -202,13 +227,20 @@ autoplay = "FullIdle"
 
 [node name="HealthLabel" type="Label" parent="." unique_id=458149397]
 layout_mode = 0
-offset_left = 177.0
-offset_top = 557.0
-offset_right = 308.0
-offset_bottom = 612.0
+offset_left = 127.0
+offset_top = 571.0
+offset_right = 258.0
+offset_bottom = 626.0
 theme_override_colors/font_color = Color(0.85814106, 0.050306942, 0.091038086, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
 theme_override_font_sizes/font_size = 32
 text = "100%"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Gun" type="AnimatedSprite2D" parent="." unique_id=1187480083]
+position = Vector2(1028, 599)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_e0onf")
+animation = &"Pistol"
+autoplay = "Pistol"
